@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+const s = fs.readFileSync('src/content.js', 'utf8');
+const line = s.split('\n')[50];
+const marker = 'data-panel="engine"';
+const first = line.indexOf(marker);
+const last = line.lastIndexOf(marker);
+console.log('count', (line.match(/data-panel="engine"/g) || []).length, 'first', first, 'last', last);
+console.log(line.slice(first - 80, first + 700));
+console.log('--- second ---');
+console.log(line.slice(last - 80, last + 700));

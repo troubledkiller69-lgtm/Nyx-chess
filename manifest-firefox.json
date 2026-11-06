@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Nyx Chess",
+  "version": "0.6.13",
+  "version_name": "0.6.13 exact-parity evaluation fill",
+  "description": "Local chess engine with human, ruthless, adaptive, and auto-rematch modes for Chess.com.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.chess.com/*", "https://chess.com/*"],
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nyx-chess@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "action": { "default_title": "Open Nyx Chess" },
+  "commands": {
+    "toggle-overlay": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "Open the Nyx Chess panel"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*", "https://chess.com/*"],
+      "js": ["src/bridge.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.chess.com/*", "https://chess.com/*"],
+      "js": ["src/engine.js", "src/settings.js", "src/openings.js", "src/review.js", "src/profile.js", "src/human.js", "src/session.js", "src/coach.js", "src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/host.html", "src/overlay.css"],
+      "matches": ["https://www.chess.com/*", "https://chess.com/*"]
+    }
+  ]
+}

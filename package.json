@@ -1,0 +1,22 @@
+{
+  "name": "nyx-chess",
+  "version": "0.6.13",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node scripts/browser-integration/run.js",
+    "test:firefox": "node scripts/browser-integration/firefox-install.js",
+    "check": "node scripts/check.js",
+    "dev": "node scripts/preview.js",
+    "engine:match": "node scripts/engine-match.js",
+    "engine:bench": "node scripts/evaluation-bench.js",
+    "bench:check": "node scripts/bench/run-correctness.js",
+    "bench:tactics": "node scripts/bench/run-tactics.js",
+    "bench:positional": "node scripts/bench/run-positional.js",
+    "bench:endgames": "node scripts/bench/run-endgames.js",
+    "bench:book": "node scripts/build-book.js",
+    "bench:match": "node scripts/bench/run-match.js",
+    "bench:report": "node scripts/bench/report.js",
+    "bench:all": "npm run bench:check && npm run bench:tactics && npm run bench:positional && npm run bench:report"
+  }
+}

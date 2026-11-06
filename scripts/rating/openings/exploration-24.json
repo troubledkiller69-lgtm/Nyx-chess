@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Ruy Lopez",
+    "moves": "e2e4 e7e5 g1f3 b8c6 f1b5 a7a6",
+    "sourceTuningIndex": 1
+  },
+  {
+    "name": "Sicilian Najdorf",
+    "moves": "e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6",
+    "sourceTuningIndex": 6
+  },
+  {
+    "name": "French Winawer",
+    "moves": "e2e4 e7e6 d2d4 d7d5 b1c3 f8b4",
+    "sourceTuningIndex": 11
+  },
+  {
+    "name": "Caro-Kann advance",
+    "moves": "e2e4 c7c6 d2d4 d7d5 e4e5",
+    "sourceTuningIndex": 14
+  },
+  {
+    "name": "Scandinavian modern",
+    "moves": "e2e4 d7d5 e4d5 g8f6 d2d4 f6d5",
+    "sourceTuningIndex": 16
+  },
+  {
+    "name": "Pirc",
+    "moves": "e2e4 d7d6 d2d4 g8f6 b1c3 g7g6",
+    "sourceTuningIndex": 18
+  },
+  {
+    "name": "Petroff",
+    "moves": "e2e4 e7e5 g1f3 g8f6 f3e5 d7d6",
+    "sourceTuningIndex": 21
+  },
+  {
+    "name": "Vienna",
+    "moves": "e2e4 e7e5 b1c3",
+    "sourceTuningIndex": 28
+  },
+  {
+    "name": "Bishop's Opening",
+    "moves": "e2e4 e7e5 f1c4",
+    "sourceTuningIndex": 30
+  },
+  {
+    "name": "Smith-Morra",
+    "moves": "e2e4 c7c5 d2d4 c5d4 c2c3",
+    "sourceTuningIndex": 34
+  },
+  {
+    "name": "Queen's Gambit Declined",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6",
+    "sourceTuningIndex": 37
+  },
+  {
+    "name": "Slav",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6",
+    "sourceTuningIndex": 39
+  },
+  {
+    "name": "Tarrasch defence",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5",
+    "sourceTuningIndex": 41
+  },
+  {
+    "name": "London",
+    "moves": "d2d4 d7d5 c1f4",
+    "sourceTuningIndex": 43
+  },
+  {
+    "name": "King's Indian",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 f8g7",
+    "sourceTuningIndex": 45
+  },
+  {
+    "name": "Nimzo-Indian",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 f8b4",
+    "sourceTuningIndex": 47
+  },
+  {
+    "name": "Gruenfeld",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5",
+    "sourceTuningIndex": 51
+  },
+  {
+    "name": "Benko",
+    "moves": "d2d4 g8f6 c2c4 c7c5 d4d5 b7b5",
+    "sourceTuningIndex": 53
+  },
+  {
+    "name": "Dutch",
+    "moves": "d2d4 f7f5 g2g3 g8f6 f1g2 e7e6",
+    "sourceTuningIndex": 57
+  },
+  {
+    "name": "Catalan",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g2g3 d7d5",
+    "sourceTuningIndex": 59
+  },
+  {
+    "name": "English symmetrical",
+    "moves": "c2c4 c7c5",
+    "sourceTuningIndex": 62
+  },
+  {
+    "name": "Reti",
+    "moves": "g1f3 d7d5 g2g3 g8f6 f1g2 c7c6",
+    "sourceTuningIndex": 65
+  },
+  {
+    "name": "Nimzo-Larsen",
+    "moves": "b2b3",
+    "sourceTuningIndex": 68
+  },
+  {
+    "name": "Van Geet",
+    "moves": "b1c3",
+    "sourceTuningIndex": 71
+  }
+]

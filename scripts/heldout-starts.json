@@ -1,0 +1,10 @@
+[
+  { "name": "Caro centre", "moves": "e2e4 c7c6 d2d4 d7d5 b1c3 d5e4 c3e4 c8f5" },
+  { "name": "Scandinavian development", "moves": "e2e4 d7d5 e4d5 d8d5 b1c3 d5a5 d2d4 g8f6" },
+  { "name": "Kingside fianchetto defence", "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 f8g7 e2e4 d7d6" },
+  { "name": "Dutch structure", "moves": "d2d4 f7f5 g2g3 g8f6 f1g2 e7e6 g1f3 f8e7" },
+  { "name": "Scotch centre", "moves": "e2e4 e7e5 g1f3 b8c6 d2d4 e5d4 f3d4 f8c5" },
+  { "name": "Queens pawn development", "moves": "d2d4 d7d5 g1f3 g8f6 c1f4 c7c5 e2e3 b8c6" },
+  { "name": "Split pawn ending", "fen": "8/6p1/p3k2p/3p4/3P4/P3K2P/6P1/8 w - - 0 30" },
+  { "name": "Minor piece ending", "fen": "8/5pk1/2n3p1/3p3p/3P3P/2N3P1/5PK1/8 w - - 0 30" }
+]

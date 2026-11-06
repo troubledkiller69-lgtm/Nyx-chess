@@ -1,0 +1,562 @@
+[
+  {
+    "id": "mate-1-26",
+    "category": "mate in 1",
+    "fen": "3K4/7k/8/2R5/6R1/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-69",
+    "category": "mate in 1",
+    "fen": "3k4/Q7/2K5/5N2/8/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-65",
+    "category": "mate in 1",
+    "fen": "3k4/R7/7R/8/8/8/3K4/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-46",
+    "category": "mate in 1",
+    "fen": "3R4/8/8/8/7k/8/6R1/6K1 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-74",
+    "category": "mate in 1",
+    "fen": "4K3/8/8/8/8/8/1Q5R/4k3 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-73",
+    "category": "mate in 1",
+    "fen": "4Q3/8/7k/8/7N/8/5K2/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-64",
+    "category": "mate in 1",
+    "fen": "5k2/2Q5/8/1R6/8/8/5K2/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-49",
+    "category": "mate in 1",
+    "fen": "6Q1/8/4K3/8/8/8/5R2/k7 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-67",
+    "category": "mate in 1",
+    "fen": "6R1/4R3/8/8/8/7K/8/7k w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-23",
+    "category": "mate in 1",
+    "fen": "6R1/8/8/k1K2R2/8/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-66",
+    "category": "mate in 1",
+    "fen": "7k/2Q5/8/K7/6R1/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-80",
+    "category": "mate in 1",
+    "fen": "7k/3Q4/8/8/8/6K1/8/1R6 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-71",
+    "category": "mate in 1",
+    "fen": "8/1Q6/3R4/k7/6K1/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-79",
+    "category": "mate in 1",
+    "fen": "8/4K3/8/8/6R1/8/3R4/1k6 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-77",
+    "category": "mate in 1",
+    "fen": "8/6K1/8/3Q4/5N2/8/7k/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-8",
+    "category": "mate in 1",
+    "fen": "8/6K1/8/8/8/7R/R7/3k4 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-2",
+    "category": "mate in 1",
+    "fen": "8/6KQ/8/8/8/8/6R1/k7 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-53",
+    "category": "mate in 1",
+    "fen": "8/8/2R3N1/8/8/5K2/8/5k2 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-16",
+    "category": "mate in 1",
+    "fen": "8/8/3R4/8/6R1/1K6/8/7k w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-41",
+    "category": "mate in 1",
+    "fen": "8/8/4R3/8/8/5K1k/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-28",
+    "category": "mate in 1",
+    "fen": "8/8/6R1/8/3Q4/K7/8/7k w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-7",
+    "category": "mate in 1",
+    "fen": "8/8/8/3K4/1R2Q3/8/8/k7 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-76",
+    "category": "mate in 1",
+    "fen": "8/8/8/8/8/1B3K2/3Q4/7k w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-78",
+    "category": "mate in 1",
+    "fen": "8/8/8/8/R7/2K5/8/2k5 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-29",
+    "category": "mate in 1",
+    "fen": "8/8/B7/8/6Q1/1K6/8/1k6 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-68",
+    "category": "mate in 1",
+    "fen": "8/B7/k7/2Q4K/8/8/8/8 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-3",
+    "category": "mate in 1",
+    "fen": "8/Q7/8/8/K7/8/R7/4k3 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-72",
+    "category": "mate in 1",
+    "fen": "k7/8/1K6/8/1Q6/8/8/6R1 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-75",
+    "category": "mate in 1",
+    "fen": "N7/8/5R2/8/8/8/5K2/7k w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-1-70",
+    "category": "mate in 1",
+    "fen": "N7/8/k7/8/8/8/7K/1Q6 w - - 0 1",
+    "mateIn": 1,
+    "best": null
+  },
+  {
+    "id": "mate-2-48",
+    "category": "mate in 2",
+    "fen": "1k6/4R3/8/4K3/8/8/4R3/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-11",
+    "category": "mate in 2",
+    "fen": "1k6/5K2/8/8/2R5/8/8/4R3 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-47",
+    "category": "mate in 2",
+    "fen": "2K3k1/8/8/5R2/8/8/7R/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-44",
+    "category": "mate in 2",
+    "fen": "2k5/6R1/8/8/4K3/8/8/4R3 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-14",
+    "category": "mate in 2",
+    "fen": "2k5/8/8/4R3/8/1K4Q1/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-27",
+    "category": "mate in 2",
+    "fen": "2k5/8/8/6K1/3R4/8/4Q3/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-50",
+    "category": "mate in 2",
+    "fen": "2Q5/8/8/k7/2K5/8/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-5",
+    "category": "mate in 2",
+    "fen": "2R5/6R1/2K4k/8/8/8/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-17",
+    "category": "mate in 2",
+    "fen": "3k4/8/4K3/8/8/4N3/Q7/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-22",
+    "category": "mate in 2",
+    "fen": "4K3/6Q1/8/8/8/4R3/7k/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-51",
+    "category": "mate in 2",
+    "fen": "4k3/Q7/5R2/8/6K1/8/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-34",
+    "category": "mate in 2",
+    "fen": "4R3/8/8/8/3K4/8/2R5/5k2 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-1",
+    "category": "mate in 2",
+    "fen": "5R2/R7/8/8/7K/8/8/4k3 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-13",
+    "category": "mate in 2",
+    "fen": "6k1/8/5K2/8/7R/8/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-21",
+    "category": "mate in 2",
+    "fen": "6k1/8/8/8/1RK5/8/5R2/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-60",
+    "category": "mate in 2",
+    "fen": "8/1K2Q3/8/8/8/7R/8/2k5 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-30",
+    "category": "mate in 2",
+    "fen": "8/2Q5/8/K3R3/8/8/k7/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-54",
+    "category": "mate in 2",
+    "fen": "8/3K4/8/8/2R5/8/4R3/1k6 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-39",
+    "category": "mate in 2",
+    "fen": "8/4R3/8/8/K7/8/7k/6R1 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-62",
+    "category": "mate in 2",
+    "fen": "8/6R1/8/8/8/5K2/8/4k3 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-55",
+    "category": "mate in 2",
+    "fen": "8/7k/5Q2/8/7K/8/R7/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-36",
+    "category": "mate in 2",
+    "fen": "8/8/1Q6/8/7k/8/5K2/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-18",
+    "category": "mate in 2",
+    "fen": "8/8/2K5/5Q2/8/2B5/8/2k5 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-38",
+    "category": "mate in 2",
+    "fen": "8/8/4RQ2/3K4/8/8/k7/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-6",
+    "category": "mate in 2",
+    "fen": "8/8/5Q2/8/8/7B/7k/2K5 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-52",
+    "category": "mate in 2",
+    "fen": "8/8/8/R7/8/5K2/4R3/1k6 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-4",
+    "category": "mate in 2",
+    "fen": "8/8/k7/8/8/2Q1K3/7R/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-45",
+    "category": "mate in 2",
+    "fen": "8/R7/8/8/8/5K2/8/6k1 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-56",
+    "category": "mate in 2",
+    "fen": "k7/8/3K4/8/8/4R3/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-2-33",
+    "category": "mate in 2",
+    "fen": "k7/8/6Q1/6K1/8/5R2/8/8 w - - 0 1",
+    "mateIn": 2,
+    "best": null
+  },
+  {
+    "id": "mate-3-31",
+    "category": "mate in 3",
+    "fen": "1k6/8/3K4/8/6Q1/8/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-40",
+    "category": "mate in 3",
+    "fen": "2B5/8/8/8/k7/3K4/6Q1/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-25",
+    "category": "mate in 3",
+    "fen": "2k2K2/8/8/8/8/R6R/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-32",
+    "category": "mate in 3",
+    "fen": "2N4k/8/1Q6/8/5K2/8/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-10",
+    "category": "mate in 3",
+    "fen": "3Q4/3K4/7k/8/8/8/8/1B6 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-59",
+    "category": "mate in 3",
+    "fen": "4k3/8/1B6/6K1/8/5Q2/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-24",
+    "category": "mate in 3",
+    "fen": "5k2/8/8/3R2K1/8/8/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-61",
+    "category": "mate in 3",
+    "fen": "5Q2/5K2/8/5R2/8/8/8/2k5 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-9",
+    "category": "mate in 3",
+    "fen": "7k/8/8/8/8/5N2/1K6/2Q5 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-12",
+    "category": "mate in 3",
+    "fen": "8/1Q1K4/8/8/8/8/7k/R7 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-15",
+    "category": "mate in 3",
+    "fen": "8/2B5/8/7k/8/2K5/8/6Q1 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-63",
+    "category": "mate in 3",
+    "fen": "8/8/6Q1/3B4/8/k5K1/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-57",
+    "category": "mate in 3",
+    "fen": "8/8/6R1/8/4K3/8/7k/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-37",
+    "category": "mate in 3",
+    "fen": "8/8/8/6K1/1B6/2Q5/8/6k1 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-43",
+    "category": "mate in 3",
+    "fen": "8/8/8/7k/2B5/4K1R1/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-19",
+    "category": "mate in 3",
+    "fen": "8/8/8/8/7K/8/5R2/7k w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-20",
+    "category": "mate in 3",
+    "fen": "8/8/k5K1/8/8/1Q1N4/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-58",
+    "category": "mate in 3",
+    "fen": "8/R4K2/8/8/1R6/7k/8/8 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-42",
+    "category": "mate in 3",
+    "fen": "R5K1/8/8/8/5R2/8/8/3k4 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  },
+  {
+    "id": "mate-3-35",
+    "category": "mate in 3",
+    "fen": "R7/8/8/3K4/8/7k/8/2R5 w - - 0 1",
+    "mateIn": 3,
+    "best": null
+  }
+]

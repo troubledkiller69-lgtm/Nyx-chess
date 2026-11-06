@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nyx Chess local Chess.com board harness</title>
+  <style>
+    html, body { margin: 0; min-height: 100vh; background: #262421; color: #eee; font: 14px system-ui, sans-serif; }
+    #wrap { display: flex; gap: 24px; padding: 24px; }
+    wc-chess-board { position: relative; display: block; flex: none; width: 480px; height: 480px; background: #b58863; }
+    .square { position: absolute; width: 60px; height: 60px; box-sizing: border-box; }
+    .square.dark { background: #8b6a4b; }
+    #log { white-space: pre-wrap; width: 420px; line-height: 1.4; }
+    #log b { color: #f0b64e; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <wc-chess-board id="board" aria-label="Local test board"></wc-chess-board>
+    <div id="log"></div>
+  </div>
+  <script>
+    (() => {
+      const START = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+      // Knight shuffle: repeated position keys with a legal move between every
+      // consecutive pair. Used to keep a review running long enough to cancel.
+      const LONG_CYCLE = [
+        'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1',
+        'rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2',
+        'rnbqkb1r/pppppppp/5n2/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 3 2',
+        'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 4 3'
+      ];
+      // Scholar's mate: a legal, completed 7-ply game with four White moves.
+      const COMPLETED = [
+        START,
+        'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1',
+        'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1',
+        'rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2',
+        'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3',
+        'r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3',
+        'r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4',
+        'r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4'
+      ];
+      const FIRST_MOVES = [
+        ['a2','a3'], ['a2','a4'], ['b2','b3'], ['b2','b4'], ['c2','c3'], ['c2','c4'],
+        ['d2','d3'], ['d2','d4'], ['e2','e3'], ['e2','e4'], ['f2','f3'], ['f2','f4'],
+        ['g2','g3'], ['g2','g4'], ['h2','h3'], ['h2','h4'], ['b1','a3'], ['b1','c3'],
+        ['g1','f3'], ['g1','h3']
+      ];
+      const board = document.getElementById('board');
+      const log = document.getElementById('log');
+      const state = {
+        fen: START,
+        history: [START],
+        result: '*',
+        playingAs: 'w',
+        orientation: 'w',
+        lastMove: null,
+        acceptMoves: false
+      };
+      const messages = [];
+      const note = (text) => {
+        const line = document.createElement('div');
+        line.textContent = text;
+        log.append(line);
+        while (log.childElementCount > 30) log.firstElementChild.remove();
+      };
+      window.addEventListener('message', (event) => {
+        const data = event.data;
+        if (event.origin !== location.origin || data?.channel !== 'nyx-chess-v1' || data.direction !== 'page') return;
+        messages.push(data);
+        note(`page -> extension: ${data.type}${data.move ? ' ' + data.move : ''}${data.error ? ' / ' + data.error : ''}`);
+      });
+
+      // 64 positioned squares, so elementFromPoint() sees a real board target.
+      for (let row = 0; row < 8; row++) {
+        for (let file = 0; file < 8; file++) {
+          const square = document.createElement('div');
+          square.className = `square ${(row + file) % 2 ? 'dark' : ''}`;
+          square.dataset.square = 'abcdefgh'[file] + (8 - row);
+          square.style.left = `${file * 60}px`;
+          square.style.top = `${row * 60}px`;
+          board.append(square);
+        }
+      }
+
+      let pressed = null;
+      board.addEventListener('pointerdown', (event) => {
+        pressed = event.target.closest('.square')?.dataset.square || null;
+        note(`pointerdown ${pressed || '?'}`);
+      });
+      board.addEventListener('pointerup', (event) => {
+        const released = event.target.closest('.square')?.dataset.square || null;
+        note(`pointerup ${pressed || '?'} -> ${released || '?'}`);
+        if (!state.acceptMoves || !pressed || !released) return;
+        if (!FIRST_MOVES.some(([from, to]) => from === pressed && to === released)) return;
+        state.lastMove = { from: pressed, to: released, promotion: null };
+        state.fen = state.history.length === 1
+          ? 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1'
+          : state.fen;
+        state.history.push(state.fen);
+        pressed = null;
+      });
+
+      board.game = {
+        getFEN: () => state.fen,
+        getHistoryFENs: () => state.history.slice(),
+        getResult: () => state.result,
+        getCalculatedResult: () => state.result,
+        getPlayingAs: () => state.playingAs,
+        getOptions: () => ({ flipped: state.orientation === 'b' }),
+        getLastMove: () => state.lastMove,
+        getLegalMoves: () => state.history.length <= 1
+          ? FIRST_MOVES.map(([from, to]) => ({ from, to, promotion: null }))
+          : []
+      };
+
+      window.__harness = {
+        messages,
+        get: () => ({ fen: state.fen, history: state.history.slice(), result: state.result,
+          playingAs: state.playingAs, orientation: state.orientation }),
+        reset() {
+          state.fen = START;
+          state.history = [START];
+          state.result = '*';
+          state.playingAs = 'w';
+          state.orientation = 'w';
+          state.lastMove = null;
+          note('harness: new active game');
+        },
+        completeFoolsMate() {
+          state.fen = COMPLETED.at(-1);
+          state.history = COMPLETED.slice();
+          state.result = '1-0';
+          state.playingAs = 'w';
+          note('harness: completed game (Scholar\'s mate)');
+        },
+        completeLongGame() {
+          state.history = [START];
+          for (let i = 0; i < 16; i++) state.history.push(...LONG_CYCLE);
+          state.fen = state.history.at(-1);
+          state.result = '1-0';
+          state.playingAs = 'w';
+          note('harness: long completed game');
+        },
+        load(fen, playingAs, result) {
+          state.fen = fen;
+          state.history = [fen];
+          state.result = result || '*';
+          state.playingAs = playingAs || 'w';
+          state.lastMove = null;
+          note(`harness: loaded ${fen}`);
+        },
+        hangingQueen() {
+          this.load('4k3/8/8/4p3/3Q4/8/8/4K3 w - - 0 1', 'w');
+          note('harness: hanging queen position');
+        },
+        accept(on) { state.acceptMoves = Boolean(on); },
+        orient(color) {
+          state.orientation = color === 'b' ? 'b' : 'w';
+          note(`harness: orientation ${state.orientation}`);
+        },
+        resize(px) {
+          const size = Math.max(240, Math.min(720, Number(px) || 480));
+          board.style.width = `${size}px`;
+          board.style.height = `${size}px`;
+          for (const square of board.querySelectorAll('.square')) {
+            square.style.width = `${size / 8}px`;
+            square.style.height = `${size / 8}px`;
+            square.style.left = `${Number(square.dataset.square[0].charCodeAt(0) - 97) * size / 8}px`;
+            square.style.top = `${(8 - Number(square.dataset.square[1])) * size / 8}px`;
+          }
+          note(`harness: board ${size}px`);
+        }
+      };
+      note('harness ready');
+    })();
+  </script>
+</body>
+</html>

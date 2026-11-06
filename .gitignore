@@ -1,0 +1,14 @@
+node_modules/
+tools/stockfish/
+/analysis/
+*.log
+isolate-*.log
+*.zip
+.DS_Store
+Thumbs.db
+docs/benchmarks/rating/runs/
+docs/benchmarks/rating/experiments/
+docs/benchmarks/rating/diagnostics/
+docs/benchmarks/rating/preflight/
+docs/benchmarks/rating/baselines/
+docs/research/

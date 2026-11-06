@@ -1,0 +1,62 @@
+[
+  {
+    "id": "start",
+    "category": "opening",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+  },
+  {
+    "id": "ruy-lopez",
+    "category": "opening",
+    "moves": "e2e4 e7e5 g1f3 b8c6 f1b5 a7a6"
+  },
+  {
+    "id": "italian-slow",
+    "category": "opening",
+    "moves": "e2e4 e7e5 g1f3 b8c6 f1c4 g8f6 d2d3 f8c5"
+  },
+  {
+    "id": "sicilian-najdorf",
+    "category": "middlegame",
+    "moves": "e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6"
+  },
+  {
+    "id": "french-winawer",
+    "category": "middlegame",
+    "moves": "e2e4 e7e6 d2d4 d7d5 b1c3 f8b4"
+  },
+  {
+    "id": "caro-advance",
+    "category": "middlegame",
+    "moves": "e2e4 c7c6 d2d4 d7d5 e4e5"
+  },
+  {
+    "id": "mate-in-2",
+    "category": "tactical",
+    "fen": "8/1K2Q3/8/8/8/7R/8/2k5 w - - 0 1"
+  },
+  {
+    "id": "distant-slider-check",
+    "category": "tactical",
+    "fen": "k7/8/K7/8/8/8/8/7R w - - 0 1"
+  },
+  {
+    "id": "hanging-queen",
+    "category": "tactical",
+    "fen": "4k3/8/8/3q4/4P3/8/8/4K3 w - - 0 1"
+  },
+  {
+    "id": "pawn-promotion",
+    "category": "endgame",
+    "fen": "7k/P7/6K1/8/8/8/8/8 w - - 0 1"
+  },
+  {
+    "id": "king-pawn-opposition",
+    "category": "endgame",
+    "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1"
+  },
+  {
+    "id": "rook-pawn-race",
+    "category": "endgame",
+    "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1"
+  }
+]

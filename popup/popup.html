@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nyx Chess</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="../src/settings.js" defer></script>
+  <script src="../src/engine.js" defer></script>
+  <script src="../src/openings.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M10 32h22M13 28h16l-2-8 5-5-7-10-3 4-8 3-5 9 7 2 3-6"/><path d="M25 13h.1"/></svg><div><h1>Nyx Chess</h1><p>The next move, considered.</p></div></div>
+    <span id="connection" class="connection" title="Board disconnected"><i aria-hidden="true"></i><span id="connectionText">Offline</span></span>
+  </header>
+  <main>
+    <section class="clock-case" aria-label="Engine readout">
+      <div class="clock-top"><span id="turn">No board</span><span id="phase">Idle</span></div>
+      <div id="quality" class="hint" aria-label="Selected move quality">—</div>
+      <div class="clock-face"><div class="move-display"><span class="display-label">Selected move</span><strong id="move">—</strong></div><div class="score-display"><span class="display-label">Evaluation</span><strong id="score">—</strong></div></div>
+      <div class="clock-bottom"><span id="metrics">Search runs on your device</span><svg class="board-mark" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 0h8v8H0zM8 8h8v8H8z"/></svg></div>
+    </section>
+    <p id="status" role="status" aria-live="polite">Connecting to this tab…</p>
+    <form id="settings" novalidate>
+      <nav class="tabs" role="tablist" aria-label="Engine settings">
+        <button id="tab-play" type="button" role="tab" aria-selected="true" aria-controls="panel-play" data-tab="play">Play</button>
+        <button id="tab-openings" type="button" role="tab" aria-selected="false" aria-controls="panel-openings" tabindex="-1" data-tab="openings">Openings</button>
+        <button id="tab-engine" type="button" role="tab" aria-selected="false" aria-controls="panel-engine" tabindex="-1" data-tab="engine">Engine</button>
+      </nav>
+      <div class="panels">
+        <section id="panel-play" role="tabpanel" aria-labelledby="tab-play">
+          <label for="control">Move control<select id="control"><option value="autoplay">Autoplay — move pieces</option><option value="coach">Coach — suggestions only</option></select></label>
+          <label class="range-label" for="blunders"><span>Blunders per game</span><output id="blundersValue">2</output><input id="blunders" type="range" min="0" max="3" step="1" value="2"></label>
+          <p id="blunderStatus" class="hint" role="status">Hard-error limit per game; eligible positions only.</p>
+          <label for="blunderSeverity">Error severity<select id="blunderSeverity"><option value="major">Major — 3–9 pawn evaluation loss</option><option value="mixed">Mixed — 0.8–4.5 pawn evaluation loss</option></select></label>
+          <p class="hint">Our engine estimate; Chess.com may grade it differently. Human mode also plays near-best alternatives.</p>
+          <label class="range-label" for="variety"><span>Move variety</span><output id="varietyValue">0</output><input id="variety" type="range" min="0" max="100" value="0"></label>
+          <p class="hint">Varies scored alternatives; Human mode already sandbags near-best moves. For opening diversity, choose Engine chooses rather than a fixed book.</p>
+          <label for="mode">Playing mode<select id="mode"><option value="human">Human</option><option value="ruthless">Ruthless — no deliberate errors</option></select></label>
+          <div class="elo-heading"><div><label for="elo">Target Elo</label><p id="levelName">Approximate playing level</p></div><output id="eloValue" for="elo">1,600</output></div>
+          <input id="elo" type="range" min="600" max="2250" step="50" value="1600" aria-describedby="eloNote">
+          <div class="range-ticks" aria-hidden="true"><span>600</span><span>1,400</span><span>Maximum</span></div>
+          <p id="eloNote" class="hint">Actual play varies by position and time; not a rated-strength promise.</p>
+          <div class="paired-fields"><label for="side">Play as<select id="side"><option value="auto">Auto-detect</option><option value="w">White</option><option value="b">Black</option><option value="both">Both sides</option></select></label><label for="style">Playing style<select id="style"><option value="balanced">Balanced</option><option value="tactical">Attacking</option><option value="positional">Positional</option></select></label></div>
+          <div class="paired-fields"><label for="autoRematch">Auto-rematch / queue<select id="autoRematch"><option value="no">Off</option><option value="yes">On</option></select></label><label for="adaptive">Adapt to opponent<select id="adaptive"><option value="yes">On</option><option value="no">Off</option></select></label></div>
+          <p class="hint">Queue keeps starting the next game, even across page changes, until you press Stop.</p>
+        </section>
+        <section id="panel-openings" role="tabpanel" aria-labelledby="tab-openings" hidden>
+          <div class="panel-intro"><h2>Choose your opening.</h2><p>A repertoire for each side of the board.</p></div>
+          <label class="opening-field" for="openingWhite"><span class="piece-token white" aria-hidden="true"></span><span>With White<select id="openingWhite"></select></span></label>
+          <label class="opening-field" for="openingBlack"><span class="piece-token black" aria-hidden="true"></span><span>With Black<select id="openingBlack"></select></span></label>
+          <label id="custom-label" for="customLine" hidden>Custom line<textarea id="customLine" rows="2" maxlength="1000" placeholder="e2e4 e7e5 f2f4 e5f4 g1f3" spellcheck="false"></textarea><span class="hint">Both sides, from the starting position. Coordinate notation.</span></label>
+          <p class="hint">If your opponent leaves the book, engine search takes over.</p>
+        </section>
+        <section id="panel-engine" role="tabpanel" aria-labelledby="tab-engine" hidden>
+          <div class="field"><label for="depth">Maximum depth</label><select id="depth"><option value="1">1 ply</option><option value="2">2 plies</option><option value="3">3 plies</option><option value="4">4 plies</option><option value="5">5 plies</option><option value="6">6 plies</option><option value="7">7 plies</option><option value="8">8 plies</option><option value="9">9 plies</option><option value="10">10 plies</option><option value="11">11 plies</option><option value="12">12 plies</option><option value="13">13 plies</option><option value="14">14 plies</option><option value="15">15 plies</option><option value="16">16 plies</option></select></div>
+          <div class="paired-fields timing"><label for="timeMs">Search budget<div class="number"><input id="timeMs" type="number" min="50" max="5000" step="50"><span>ms</span></div></label><label for="delayMs">Move delay<div class="number"><input id="delayMs" type="number" min="0" max="10000" step="50"><span>ms</span></div></label></div>
+          <p class="hint">Approximate move-quality preset, not a measured rating. Search depth and time are upper limits.</p>
+        </section>
+      </div>
+    </form>
+  </main>
+  <footer><div class="actions"><button id="once" type="button">Play one move</button><button id="toggle" type="button" class="primary">Start autoplay</button></div><div class="footer-note"><span>Local engine</span><span>Evaluation from White’s side</span></div></footer>
+</body>
+</html>

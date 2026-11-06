@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nyx overlay harness</title>
+  <style>body { margin: 0; min-height: 100vh; background: #2f2a23; font-family: system-ui, sans-serif; color: #eee; } .note { padding: 18px; max-width: 420px; }</style>
+</head>
+<body>
+  <div class="note">Overlay harness — the tournament panel below is the real shadow-DOM UI from <code>src/content.js</code>. Open this page, then use the launcher button.</div>
+  <script>
+    const settings = {
+      side: 'auto', mode: 'human', pace: 'bullet', depth: 5, timeMs: 160, delayMs: 25, elo: 1600,
+      variety: 0, style: 'balanced', blunders: 2, blunderSeverity: 'major', control: 'autoplay', autoRematch: false, adaptive: 'yes',
+      openingWhite: 'italian', openingBlack: 'sicilian',
+      customLineWhite: '', customLineBlack: ''
+    };
+    window.chrome = {
+      runtime: {
+        getURL: (path) => '/' + path,
+        lastError: null,
+        sendMessage: (message, callback) => callback({
+          ok: true,
+          settings,
+          state: { available: true, turn: 'w', fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', revision: 1 },
+          running: false, once: false, engineReady: true, phase: 'idle',
+          message: 'Board connected. Ready when you are.',
+          result: { move: 'e2e4', score: 24, depth: 5, nodes: 48213, time: 620, source: 'search' },
+          resultTurn: 'w', selectedSide: 'w'
+        }),
+        onMessage: { addListener(fn) { window.__nyxListener = fn; } }
+      },
+      storage: {
+        local: {
+          get: async () => ({}),
+          set: async () => {}
+        }
+      }
+    };
+  </script>
+  <script>
+    // Test hook: the real panel uses a closed shadow root, which is correct for
+    // production but opaque to the harness. Capture it for inspection only.
+    const attach = Element.prototype.attachShadow;
+    Element.prototype.attachShadow = function (init) {
+      const root = attach.call(this, init);
+      (window.__nyxRoots ||= []).push(root);
+      return root;
+    };
+  </script>
+  <script src="/src/engine.js"></script>
+  <script src="/src/settings.js"></script>
+  <script src="/src/openings.js"></script>
+  <script src="/src/profile.js"></script>
+  <script src="/src/human.js"></script>
+  <script src="/src/content.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      window.__nyxListener?.({ channel: 'nyx-chess-v1', type: 'overlay-open' }, {}, (reply) => { window.__nyxReply = reply; });
+    });
+  </script>
+</body>
+</html>
